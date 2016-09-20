@@ -1,0 +1,7 @@
+https://en.wikipedia.org/wiki/Apache_Subversion
+https://tortoisesvn.net/downloads.html
+https://en.wikipedia.org/wiki/TortoiseSVN
+https://riouxsvn.com/
+https://tortoisesvn.net/about.html
+https://help.github.com/articles/what-are-the-differences-between-subversion-and-git/
+
