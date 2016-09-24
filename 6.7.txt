@@ -1,0 +1,148 @@
+﻿Biểu 6.7 kiểm soát
+Kiểm soát Schedule là quá trình theo dõi tình trạng hoạt động của dự án để cập nhật tiến độ dự án và
+quản lý các thay đổi đối với cơ sở tiến độ để đạt được kế hoạch. Các lợi ích quan trọng của quá trình này là nó cung cấp
+các phương tiện để nhận ra độ lệch so với kế hoạch và hành động khắc phục và phòng ngừa và do đó giảm thiểu
+đặt vào may rủi. Các yếu tố đầu vào, các công cụ và kỹ thuật, và kết quả của quá trình này được mô tả trong hình 6-22. Hình 6-23
+mô tả sơ đồ luồng dữ liệu của quá trình.
+#Hình
+Figure 6-22. control Schedule: Inputs, tools & techniques, and outputs
+
+#Hình
+Figure 6-23. control Schedule data Flow diagram
+
+Đang cập nhật mô hình lịch đòi hỏi phải biết hiệu suất thực tế cho đến nay. Bất kỳ thay đổi lịch trình
+cơ bản chỉ có thể được chấp thuận thông qua việc Thực hiện kiểm soát thay đổi tích hợp quy trình (mục 4.5). Điều khiển
+Schedule, như một thành phần của Thực hiện quy trình kiểm soát thay đổi tích hợp, có liên quan với:
+• Xác định tình trạng hiện tại của tiến độ dự án,
+• Ảnh hưởng đến các yếu tố tạo ra sự thay đổi lịch trình,
+• Xác định nếu tiến độ dự án đã thay đổi, và
+• Quản lý các thay đổi thực tế khi chúng xảy ra.
+Nếu bất kỳ phương pháp tiếp cận nhanh được sử dụng, lịch trình kiểm soát là có liên quan với:
+• Xác định tình trạng hiện tại của tiến độ dự án bằng cách so sánh tổng số lượng công việc giao
+và chấp nhận so với dự toán công việc hoàn thành cho chu kỳ thời gian trôi qua,
+• Tiến hành đánh giá hồi cứu (đánh giá theo lịch trình để ghi lại bài học kinh nghiệm) cho quá trình sửa chữa
+và cải thiện, nếu có yêu cầu,
+• Reprioritizing kế hoạch công việc còn lại (backlog),
+• Xác định tỷ lệ mà tại đó các phân phôi được sản xuất, xác nhận, và được chấp nhận (vận tốc) trong trao
+thời gian cho mỗi lần lặp (đồng ý thời gian chu kỳ làm việc, thường là hai tuần hoặc một tháng),
+• Xác định rằng tiến độ dự án đã thay đổi, và
+• Quản lý các thay đổi thực tế khi chúng xảy ra.
+
+6.7.1 Lịch trình kiểm soát: Đầu vào
+6.7.1.1 Kế hoạch Quản lý dự án
+Được mô tả trong mục 4.2.3.1. Kế hoạch quản lý dự án bao gồm các kế hoạch quản lý tiến độ và
+lịch trình đường cơ sở. Kế hoạch quản lý lịch trình mô tả cách lịch trình sẽ được quản lý và kiểm soát.
+Các cơ sở tiến độ được sử dụng như một tài liệu tham khảo để so sánh với kết quả thực tế để xác định xem một sự thay đổi, điều chỉnh
+hành động, hoặc hành động phòng ngừa là cần thiết.
+Lịch 6.7.1.2 Dự án
+Được mô tả trong mục 6.6.3.2. tiến độ dự án đề cập đến các phiên bản gần đây nhất với ký hiệu để chỉ
+cập nhật, hoàn thành các hoạt động, và bắt đầu hoạt động kể từ ngày dữ liệu được chỉ định.
+dữ liệu hiệu suất làm việc 6.7.1.3
+Được mô tả trong mục 4.3.3.2. dữ liệu hiệu suất làm việc đề cập đến thông tin về tiến độ dự án như đó
+hoạt động đã bắt đầu, tiến bộ của mình (ví dụ, thời gian thực tế, thời gian còn lại, và phần trăm chất đầy đủ),
+và các hoạt động đã hoàn thành.
+6.7.1.4 lịch Dự án
+Được mô tả trong mục 6.6.3.4. Một mô hình lịch trình có thể đòi hỏi nhiều hơn một lịch trình để cho phép
+thời gian làm việc khác nhau đối với một số hoạt động để tính toán dự báo tiến độ.
+6.7.1.5 dữ liệu Lịch
+Được mô tả trong mục 6.6.3.3. dữ liệu lịch trình sẽ được xem xét và cập nhật trong quá trình lịch trình kiểm soát.
+6.7.1.6 Tài sản Quy trình tổ chức
+Được mô tả trong phần 2.1.4. Các tài sản quá trình tổ chức có ảnh hưởng đến quá trình Lịch trình điều khiển
+bao gồm, nhưng không giới hạn:
+• hiện chính sách kế hoạch chính thức và không chính thức kiểm soát liên quan đến thủ tục và hướng dẫn;
+• Các công cụ Lịch kiểm soát; và
+• Giám sát và báo cáo các phương pháp được sử dụng.
+6.7.2 Lịch trình kiểm soát: các công cụ và kỹ thuật
+6.7.2.1 đánh giá hiệu suất
+Hiệu suất đo lường đánh giá, so sánh và phân tích hiệu suất lịch trình như bắt đầu thực tế và
+ngày hoàn thành, phần trăm hoàn thành, và thời gian còn lại cho công việc được tiến hành. kỹ thuật khác nhau có thể được sử dụng,
+trong đó:
+• Phân tích xu hướng. phân tích xu hướng kiểm tra thực hiện dự án theo thời gian để xác định xem
+hiệu suất được cải thiện hay xấu đi. các kỹ thuật phân tích đồ họa có giá trị cho sự hiểu biết
+thực hiện cho đến nay và để so sánh với mục tiêu hiệu suất trong tương lai theo hình thức ngày hoàn thành.
+• phương pháp đường găng (mục 6.6.2.2). So sánh sự tiến bộ dọc theo con đường quan trọng có thể giúp
+xác định tình trạng kế hoạch. Phương sai trên con đường quan trọng sẽ có tác động trực tiếp đến kết thúc dự án
+ngày. Đánh giá tiến độ các hoạt động trên con đường gần quan trọng có thể xác định nguy cơ tiến độ.
+• Phương pháp chuỗi quan trọng (Mục 6.6.2.3). So sánh số lượng của bộ đệm còn lại với lượng
+đệm cần thiết để bảo vệ các ngày giao hàng có thể giúp xác định tình trạng kế hoạch. Sự khác biệt giữa
+bộ đệm cần thiết và bộ đệm còn lại có thể xác định xem hành động khắc phục thích hợp.
+• quản lý giá trị Earned (mục 7.4.2.1). đo lường tiến độ thực hiện như: tiến độ
+phương sai (SV) và chỉ số hiệu suất lịch trình (SPI), được sử dụng để đánh giá mức độ của biến thể để
+ban đầu lịch trình đường cơ sở. Các phao và đầu kết thúc tổng phương sai cũng là những thành phần cần thiết lập kế hoạch
+để đánh giá hiệu suất thời gian dự án. các khía cạnh quan trọng của lịch trình điều khiển bao gồm việc xác định nguyên nhân
+và mức độ sai so với đường cơ sở tiến độ (mục 6.6.3.1), ước tính các tác động
+những phương sai cho công việc trong tương lai để hoàn thành, và quyết định có hành động khắc phục hoặc phòng ngừa
+bắt buộc. Ví dụ, một sự chậm trễ lớn vào bất kỳ hoạt động không phải trên con đường quan trọng có thể có ít ảnh hưởng
+tiến độ chung của dự án, trong khi một sự chậm trễ ngắn hơn nhiều vào một hoạt động quan trọng hoặc gần quan trọng có thể yêu cầu
+hành động ngay lập tức. Đối với dự án không sử dụng quản lý giá trị thu được, phân tích phương sai tương tự có thể được
+thực hiện bằng cách so sánh bắt đầu hoạt động theo kế hoạch hoặc ngày kết thúc chống lại bắt đầu thực tế hoặc kết thúc ngày để
+xác định chênh lệch giữa các cơ sở tiến độ và hiệu quả dự án thực tế. Phân tích sâu hơn có thể
+được thực hiện để xác định nguyên nhân và mức độ sai so với đường cơ sở lịch trình và bất kỳ
+hành động khắc phục và phòng ngừa cần thiết.
+6.7.2.2 Phần mềm Quản lý dự án
+phần mềm quản lý dự án lập kế hoạch cung cấp khả năng theo dõi ngày lên kế hoạch so với số ngày thực tế,
+báo cáo phương sai đến và tiến độ thực hiện đối với các cơ sở tiến độ, và để dự báo những tác động của sự thay đổi
+với mô hình tiến độ dự án.
+6.7.2.3 kỹ thuật tối ưu hóa tài nguyên
+Được mô tả trong mục 6.6.2.4. kỹ thuật tối ưu hóa tài nguyên liên quan đến việc lập kế hoạch hoạt động và các
+nguồn lực cần thiết của những người hoạt động trong khi có tính đến cả các nguồn lực sẵn có và dự án
+thời gian.
+6.7.2.4 kỹ thuật mô hình hóa
+Được mô tả trong mục 6.6.2.5. kỹ thuật mô hình được sử dụng để xem xét các kịch bản khác nhau hướng dẫn của giám sát rủi ro
+để mang lại những mô hình tiến vào sự liên kết với các kế hoạch quản lý dự án và cơ sở đã được phê duyệt.
+6.7.2.5 chào và độ trễ
+
+Điều chỉnh dẫn và chậm được áp dụng trong phân tích mạng để tìm cách để đưa hoạt động dự án được
+phía sau vào sự liên kết với kế hoạch. Ví dụ, trên một dự án xây dựng một tòa nhà văn phòng mới, cảnh quan
+có thể được điều chỉnh để bắt đầu trước khi làm việc bên ngoài của tòa nhà được hoàn tất bằng cách tăng thời gian dẫn trong
+mối quan hệ. Hoặc, một đội ngũ kỹ thuật có thể điều chỉnh bằng văn bản khi bắt đầu chỉnh sửa dự thảo của một tài liệu lớn ngay lập tức
+sau khi các tài liệu được hoàn thành bằng cách loại bỏ hoặc giảm thời gian trễ.
+6.7.2.6 Biểu nén
+Được mô tả trong mục 6.6.2.7. kỹ thuật Biểu nén được sử dụng để tìm cách để mang lại cho các hoạt động dự án
+đó là phía sau vào sự liên kết với các kế hoạch bằng cách theo dõi nhanh hay đâm lịch trình cho các công việc còn lại.
+công cụ 6.7.2.7 Scheduling
+Lịch trình dữ liệu được cập nhật và biên soạn thành các mô hình định kỳ để phản ánh tiến độ thực tế của dự án và
+công việc còn lại sẽ hoàn thành. Các công cụ lập kế hoạch (mục 6.6.2.8) và các dữ liệu lịch hỗ trợ được sử dụng
+kết hợp với các phương pháp thủ công hoặc phần mềm quản lý dự án khác để thực hiện phân tích mạng lịch
+để tạo ra một lịch trình dự án được cập nhật.
+6.7.3 Lịch trình kiểm soát: kết quả đầu ra
+6.7.3.1 làm việc Thông tin Performance
+Các SV và SPI chỉ số hoạt động thời gian tính toán cho WBS thành phần, đặc biệt là các gói công việc
+và các tài khoản kiểm soát, là những tài liệu và thông tin cho các bên liên quan.
+6.7.3.2 Lịch trình dự báo
+Lịch trình dự báo là ước tính hoặc dự đoán các điều kiện và các sự kiện trong tương lai của dự án dựa trên
+thông tin và kiến ​​thức sẵn có tại thời điểm dự báo. Dự báo được cập nhật và tái bản dựa trên
+thông tin hiệu suất công việc cung cấp như là thực hiện dự án. Thông tin này được dựa trên quá khứ của dự án
+hiệu suất và dự kiến ​​sẽ thực hiện trong tương lai, và bao gồm các chỉ số hiệu suất thu được giá trị mà có thể
+ảnh hưởng đến dự án trong tương lai.
+6.7.3.3 yêu cầu thay đổi
+Lịch trình sai phân tích, cùng với đánh giá của báo cáo tiến độ, kết quả của các biện pháp thực hiện, và
+sửa đổi phạm vi dự án hoặc tiến độ dự án có thể dẫn đến yêu cầu thay đổi để các cơ sở tiến độ,
+phạm vi cơ sở, và / hoặc các thành phần khác của kế hoạch quản lý dự án. Thay đổi yêu cầu được xử lý cho
+xem xét và bố trí thông qua Thực hiện kiểm soát thay đổi tích hợp quy trình (mục 4.5). hành động phòng ngừa
+có thể bao gồm những thay đổi được đề nghị để loại bỏ hoặc làm giảm xác suất của phương sai lịch âm.
+6.7.3.4 cập nhật Kế hoạch Quản lý dự án
+Các yếu tố của kế hoạch quản lý dự án có thể được cập nhật bao gồm, nhưng không giới hạn:
+• Lịch trình đường cơ sở. Những thay đổi về cơ sở lịch trình được kết hợp để đáp ứng với sự thay đổi đã được phê duyệt
+yêu cầu (mục 4.4.3.1) liên quan đến dự án thay đổi quy mô, nguồn lực hoạt động, hoặc thời gian hoạt động
+ước tính. Các cơ sở lịch trình có thể được cập nhật để phản ánh những thay đổi gây ra bởi nén lịch
+kỹ thuật.
+• kế hoạch quản lý lịch trình. Kế hoạch quản lý lịch trình có thể được cập nhật để phản ánh sự thay đổi trong
+cách lịch trình được quản lý.
+• Chi phí cơ bản. Các cơ sở chi phí có thể được cập nhật để phản ánh các yêu cầu thay đổi đã được phê duyệt hoặc thay đổi gây ra
+bằng các kỹ thuật nén.
+6.7.3.5 tài liệu Dự án cập nhật
+các tài liệu dự án có thể được cập nhật bao gồm, nhưng không giới hạn:
+• Lịch dữ liệu. sơ đồ mạng tiến độ dự án mới có thể được phát triển để hiển thị các phê duyệt còn lại
+thời hạn và sửa đổi đã được phê duyệt để tiến độ. Trong một số trường hợp, sự chậm trễ tiến độ dự án có thể được
+rất nghiêm trọng mà sự phát triển của một lịch trình mục tiêu mới có ngày bắt đầu và kết thúc dự báo là cần thiết để
+cung cấp dữ liệu thực tế để chỉ đạo công việc, đo lường hiệu suất, và đo lường sự tiến bộ.
+• Lịch trình dự án. Một lịch trình cập nhật dự án sẽ được tạo ra từ các mô hình tiến độ dân cư
+với dữ liệu lịch trình cập nhật để phản ánh sự thay đổi lịch trình và quản lý dự án.
+• đăng ký rủi ro. Sổ đăng ký rủi ro, và phản ứng nguy cơ các kế hoạch trong đó, cũng có thể được cập nhật dựa trên rủi ro
+có thể phát sinh do lịch kỹ thuật nén.
+6.7.3.6 tổ chức tài sản Quy trình cập nhật
+quá trình tài sản của tổ chức có thể được cập nhật bao gồm, nhưng không giới hạn:
+• Nguyên nhân chênh lệch,
+• Hành động khắc phục được lựa chọn và lý do, và
+• Các loại bài học kinh nghiệm từ việc kiểm soát tiến độ dự án.
